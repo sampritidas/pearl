@@ -2,4 +2,14 @@ const response = '<HTML><HEAD><meta http-equiv="content-type" content="text/html
 
 const { createConnection } = require('net');
 
+const HOST = 'localhost';
+const PORT = 4444;
+const socket = createConnection(PORT);
+
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', (chunk) => {
+  console.log(chunk);
+  // socket.write(chunk);
+})
+
 
